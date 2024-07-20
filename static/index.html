@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthAI</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.1/build/spline-viewer.js"></script>
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">HealthAI</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chatbot</a></li>
+                <li><a href="#">Virtual Consultation</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Get a Virtual Second Medical Opinion</h1>
+                <p>Discover a new way to manage your health with our AI-powered chatbot. Get personalized advice, schedule virtual consultations, and take control of your wellbeing.</p>
+                <div class="buttons">
+                    <button class="primary" id="try-chatbot">Try the Chatbot</button>
+                    <button class="secondary" id="learn-more">Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="gradient-overlay"></div>
+    <div class="spline-container">
+        <spline-viewer url="https://prod.spline.design/WI1fXeWN-3lU69KS/scene.splinecode"></spline-viewer>
+    </div>
+    <section class="second-opinion" id="second-opinion">
+        <div class="content">
+            <h2>How to Get a Virtual Second Opinion</h2>
+            <div class="text-image-container">
+                <p class="text top">Virtual consultations provide an accessible and convenient way to get a second opinion on your health condition. They eliminate the need for travel and allow you to consult with specialists from the comfort of your home.</p>
+                <img src="/static/how-it-works.png" alt="Virtual Consultation" class="background-image">
+                <p class="text left">Many people find it challenging to gather all necessary information for a second opinion. Our AI-powered platform assists in collecting and organizing your medical history to streamline the consultation process.</p>
+                <p class="text bottom">A virtual second opinion can be a crucial step in decision-making for serious health conditions. Our network of top specialists ensures you receive expert advice tailored to your specific needs.</p>
+                <p class="text right">With our platform, scheduling and managing your virtual consultation is straightforward. You can easily book appointments and follow up on your consultation through our user-friendly interface.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Button to open live doctor chat -->
+    <a href="/static/live-doctor-chat.html" class="live-chat-button">
+        Live Doctor Chat <span class="arrow">→</span>
+    </a>
+    
+    <!-- Bento Grid Section -->
+    <section class="bento-grid-container">
+        <div class="bento-grid">
+            <div class="grid-item">
+                <img src="path/to/image1.png" alt="Doctor Image 1">
+                <div class="doctor-info">
+                    <h3>Dr. Syed Mukhtar</h3>
+                    <p>MBBS, MD</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="path/to/image2.png" alt="Doctor Image 2">
+                <div class="doctor-info">
+                    <h3>Dr. Kovid Pandey</h3>
+                    <p>MBBS</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="path/to/image3.png" alt="Doctor Image 3">
+                <div class="doctor-info">
+                    <h3>Dr. Abhijeet Rathi</h3>
+                    <p>MBBS, General Physician</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="bento-grid">
+            <div class="grid-item">
+                <img src="path/to/image4.png" alt="Doctor Image 4">
+                <div class="doctor-info">
+                    <h3>Dr. Ayushma Puri</h3>
+                    <p>MBBS, DNB (Gynecology)</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="path/to/image5.png" alt="Doctor Image 5">
+                <div class="doctor-info">
+                    <h3>Dr. Dayanand Singh</h3>
+                    <p>M.D. (Physician)</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <df-messenger
+        id="chat-box"
+        class="chat-box"
+        project-id="tsunade-106"
+        agent-id="fe282eab-6401-4a9f-bb12-5f2fdec9cadd"
+        language-code="en"
+        max-query-length="-1"
+        allow-feedback="all">
+        <df-messenger-chat-bubble chat-title="Dr. AI"></df-messenger-chat-bubble>
+    </df-messenger>
+    <script>
+        document.getElementById('try-chatbot').addEventListener('click', function() {
+            setTimeout(function() {
+                const chatbot = document.querySelector('df-messenger');
+                if (chatbot) {
+                    chatbot.shadowRoot.querySelector('button').click();
+                }
+            }, 1000); // Delay to ensure widget has time to initialize
+        });
+
+        document.getElementById('learn-more').addEventListener('click', function() {
+            document.getElementById('second-opinion').scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+        });
+    </script>
+</body>
+</html>

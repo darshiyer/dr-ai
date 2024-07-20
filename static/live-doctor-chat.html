@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Doctor Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <style>
+        /* Make Dialogflow Chatbox Transparent */
+        df-messenger {
+            --df-messenger-border-radius: 20px; /* Optional: Round corners */
+            --df-messenger-background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            --df-messenger-send-icon-color: #fff; /* Color for send icon */
+            --df-messenger-chat-background-color: rgba(0, 0, 0, 0.8); /* Background color of chat area */
+            --df-messenger-button-color: rgba(0, 0, 0, 0.3); /* Color of the chat button */
+            --df-messenger-font-color: #fff; /* Text color in the chat */
+        }
+    </style>
+</head>
+<body class="live-doctor-chat">
+    <header>
+        <a href="index.html" class="logo">HealthAI</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Virtual Consultation</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Dialogflow Chatbot -->
+    <df-messenger
+        id="chat-box"
+        class="chat-box"
+        project-id="tsunade-106"
+        agent-id="fe282eab-6401-4a9f-bb12-5f2fdec9cadd"
+        language-code="en"
+        max-query-length="-1"
+        allow-feedback="all">
+        <df-messenger-chat-bubble chat-title="Dr. AI"></df-messenger-chat-bubble>
+    </df-messenger>
+
+    <!-- Large Text Above Bento Grids -->
+    <section class="selection-text">
+        <h1>Please Select the Medical Field</h1>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-grid-container">
+        <div class="bento-grid">
+            <div class="grid-item">
+                <img src="path/to/image1.png" alt="Doctor Image 1">
+                <div class="doctor-info">
+                    <h3>Dr. Syed Mukhtar</h3>
+                    <p>MBBS, MD</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="path/to/image2.png" alt="Doctor Image 2">
+                <div class="doctor-info">
+                    <h3>Dr. Kovid Pandey</h3>
+                    <p>MBBS</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="path/to/image3.png" alt="Doctor Image 3">
+                <div class="doctor-info">
+                    <h3>Dr. Abhijeet Rathi</h3>
+                    <p>MBBS, General Physician</p>
+                </div>
+            </div>
+        </div>
+        <div class="bento-grid">
+            <div class="grid-item">
+                <img src="path/to/image4.png" alt="Doctor Image 4">
+                <div class="doctor-info">
+                    <h3>Dr. Ayushma Puri</h3>
+                    <p>MBBS, DNB (Gynecology)</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="path/to/image5.png" alt="Doctor Image 5">
+                <div class="doctor-info">
+                    <h3>Dr. Dayanand Singh</h3>
+                    <p>M.D. (Physician)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
